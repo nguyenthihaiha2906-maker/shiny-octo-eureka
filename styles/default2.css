@@ -1,0 +1,337 @@
+/* --- RESET & CƠ BẢN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.collection-body {
+    background-color: #fff9fa; /* Đổi sang nền trắng ngọc trai ánh hồng nhẹ */
+    color: #3f3536;            /* Đổi sang màu chữ nâu đất đậm để mềm mại hơn màu đen */
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- THANH THÔNG BÁO TOP BAR --- */
+.top-bar {
+    background-color: #d17a8c; /* Đổi sang Hồng Luxury đậm */
+    color: #fff;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* --- THANH ĐIỀU HƯỚNG MENU ĐẸP HƠN --- */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgba(209, 122, 140, 0.1); /* Đổ bóng có ánh hồng mờ */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(209, 122, 140, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 25px;
+}
+
+.nav-logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #d17a8c; /* Đổi chữ logo sang Hồng Luxury */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-menu a {
+    color: #555;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 8px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #d17a8c; /* Đổi màu chữ khi hover/active sang hồng */
+}
+
+/* Hiệu ứng gạch chân mượt mà */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #f4a2b1; /* Đường gạch chân màu hồng pastel nhẹ nhàng */
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* --- NÚT QUAY LẠI KÉO THẢ --- */
+.floating-back-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(209, 122, 140, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: grab;
+    font-size: 22px;
+    color: #d17a8c; /* Biểu tượng mũi tên màu hồng */
+    font-weight: bold;
+    user-select: none;
+    border: 1px solid rgba(209, 122, 140, 0.2);
+}
+
+.floating-back-btn:active {
+    cursor: grabbing;
+}
+
+/* --- TIÊU ĐỀ BỘ SƯU TẬP --- */
+.title-block-luxury {
+    text-align: center;
+    margin: 70px 0 50px;
+    padding: 0 20px;
+}
+
+.title-block-luxury .subtitle {
+    color: #d17a8c; /* Đổi màu chữ nhỏ sang hồng */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.title-block-luxury h2 {
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: #3f3536;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.divider-diamond {
+    color: #f4a2b1; /* Đổi các viên kim cương phân cách sang hồng pastel */
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+}
+
+/* --- LƯỚI SẢN PHẨM --- */
+.products-grid-premium {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 45px;
+}
+
+.card-premium {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(209, 122, 140, 0.05);
+    border: 1px solid #fceef0; /* Đường viền sản phẩm hồng cực nhẹ */
+    transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209, 122, 140, 0.12);
+}
+
+.img-wrapper {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-premium:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.luxury-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #f4a2b1, #d17a8c); /* Tag dải màu chuyển từ hồng nhẹ sang hồng đậm */
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.card-details {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.card-details h3 {
+    font-size: 1.25rem;
+    color: #3f3536;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.price-tag {
+    font-size: 1.3rem;
+    color: #d17a8c; /* Giá tiền chuyển sang màu hồng chủ đạo */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* --- NÚT TƯƠNG TÁC --- */
+.cta-wrapper {
+    position: relative;
+    height: 45px;
+    overflow: hidden;
+}
+
+.btn-luxury-init {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #3f3536; /* Màu nâu đất đậm nguyên bản quý phái */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-luxury-init:hover {
+    background-color: #d17a8c; /* Khi hover nút chuyển sang hồng hẳn */
+}
+
+.action-luxury-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;      
+    align-items: center; 
+    justify-content: space-between;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.btn-luxury-confirm, .btn-luxury-cancel {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-luxury-confirm {
+    background-color: #d17a8c; /* Nút xác nhận đặt lịch chuyển sang hồng */
+    color: #fff;
+}
+
+.btn-luxury-cancel {
+    background-color: #f5ecee; /* Nút huỷ màu hồng xám nhạt */
+    color: #665a5b;
+}
+
+/* --- CHÂN TRANG --- */
+footer {
+    background-color: #241c1d; /* Đổi màu nền footer sang nâu đất đen để hợp tông hồng */
+    color: #bfa6aa;            /* Chữ footer màu hồng tro */
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    border-top: 3px solid #d17a8c; /* Đường chỉ gạch phía trên footer màu hồng đậm */
+}
+
+.footer-brand {
+    color: #fff;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 20px;
+    }
+    .nav-menu a {
+        font-size: 0.95rem;
+    }
+    .title-block-luxury h2 {
+        font-size: 1.8rem;
+    }
+    .img-wrapper {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-menu {
+        display: none; 
+    }
+    .products-grid-premium {
+        grid-template-columns: 1fr;
+    }
+}

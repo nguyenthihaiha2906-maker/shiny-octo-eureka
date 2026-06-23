@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<link href="styles/default2.css" type="text/css" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Collection - Luxury Bride</title>
+    <!-- Các file liên kết CSS -->
+    <link href="styles/default2.css" type="text/css" rel="stylesheet"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="collection-body">
+
+    <!-- THANH THÔNG BÁO TOP BAR -->
+    <div class="top-bar">
+        <!-- Ảnh banner/background của top-bar (giữ nguyên của bạn) -->
+        <img src="image/Gemini_Generated_Image_iekbooiekbooiekb.png" width="1408" height="768" alt="" style="display:none;"/> 
+        Chào mừng bạn đến với không gian của chúng tôi – Nơi hội tụ tinh hoa và đẳng cấp
+    </div>
+
+    <!-- THANH ĐIỀU HƯỚNG MENU -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- ĐÃ CHÈN LOGO VÀO ĐÂY: Thay chữ bằng cụm ảnh logo + chữ sang xịn mịn -->
+            <a href="trangchu.html" class="nav-logo">
+                <img src="image/Gemini_Generated_Image_iekbooiekbooiekb.png" alt="Luxury Bride Logo" class="logo-img" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                <span>LuxuryBrand</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="trangchu.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="bosuutap.html" class="active">Bộ sưu tập</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- NÚT QUAY LẠI KÉO THẢ -->
+    <div id="draggable-back-btn" class="floating-back-btn" onclick="goToHome(event)" title="Quay về trang chủ">
+        <span>←</span>
+    </div>
+
+    <!-- TIÊU ĐỀ BỘ SƯU TẬP -->
+    <div class="title-block-luxury">
+        <span class="subtitle">Bộ sưu tập độc quyền</span>
+        <h2>Luxury Bride Collection</h2>
+        <div class="divider-diamond">✦  ✦  ✦</div>
+    </div>
+
+    <!-- LƯỚI SẢN PHẨM CAO CẤP -->
+    <main class="products-grid-premium">
+        
+        <!-- Sản phẩm 1 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Limited</span>
+                <img src="image/2a9ccee4ad9227e139180ed3a18d23a5.jpg" alt="Váy Công Chúa Silk Tulle">
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Silk Tulle</h3>
+                <p class="price-tag">15.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sản phẩm 2 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Best Seller</span>
+                <img src="image/54a3bb404f262476ec4366294cd08570.jpg" alt="Váy Thanh Lịch Minimalist">
+            </div>
+            <div class="card-details">
+                <h3>Váy Thanh Lịch Minimalist</h3>
+                <p class="price-tag">18.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sản phẩm 3 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <span class="luxury-tag">New Season</span>
+                <img src="image/993f8fd9af822b2b621de5402b4a8a8f.jpg" alt="Váy Hoàng Gia Luxury Lace">
+            </div>
+            <div class="card-details">
+                <h3>Váy Hoàng Gia Luxury Lace</h3>
+                <p class="price-tag">25.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sản phẩm 4 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <img src="image/b13019320cb8586058aca950653006ed.jpg" alt="Váy Thiên Nga Đắp Ren Pháp">
+            </div>
+            <div class="card-details">
+                <h3>Váy Thiên Nga Đắp Ren Pháp</h3>
+                <p class="price-tag">22.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sản phẩm 5 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <img src="image/63dbc4bee4028893c3099323f4df61d8.jpg" alt="Váy Đuôi Cá Premium Satin">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Premium Satin</h3>
+                <p class="price-tag">19.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sản phẩm 6 -->
+        <article class="card-premium">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Haute Couture</span>
+                <img src="image/6bbc26129280e254a7f8fd083cddbd79.jpg" alt="Váy Ngọc Trai Vintage Glow">
+            </div>
+            <div class="card-details">
+                <h3>Váy Ngọc Trai Vintage Glow</h3>
+                <p class="price-tag">31.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">
+                        <span>Chạm Để Sở Hữu</span>
+                    </button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='lienhe.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- CHÂN TRANG -->
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Nguyễn Thạnh An | Premium Bridal Experience</p>
+    </footer>
+
+    <!-- JAVASCRIPT TƯƠNG TÁC -->
+    <script>
+        function showActions(button) {
+            button.style.opacity = '0';
+            setTimeout(() => {
+                button.style.display = 'none';
+                const actionGroup = button.nextElementSibling;
+                actionGroup.style.display = 'flex';
+                setTimeout(() => actionGroup.style.opacity = '1', 50);
+            }, 200);
+        }
+
+        function hideActions(button) {
+            const actionGroup = button.parentElement;
+            actionGroup.style.opacity = '0';
+            setTimeout(() => {
+                actionGroup.style.display = 'none';
+                const initButton = actionGroup.previousElementSibling;
+                initButton.style.display = 'block';
+                setTimeout(() => initButton.style.opacity = '1', 50);
+            }, 200);
+        }
+
+        const dragBtn = document.getElementById("draggable-back-btn");
+        let isDragging = false, hasMoved = false, offsetX, offsetY;
+
+        function startDrag(e) {
+            isDragging = true;
+            hasMoved = false;
+            dragBtn.style.transition = "none";
+            const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
+            const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+            offsetX = clientX - dragBtn.getBoundingClientRect().left;
+            offsetY = clientY - dragBtn.getBoundingClientRect().top;
+            document.addEventListener("mousemove", drag);
+            document.addEventListener("touchmove", drag, { passive: false });
+            document.addEventListener("mouseup", stopDrag);
+            document.addEventListener("touchend", stopDrag);
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            hasMoved = true;
+            if (e.cancelable) e.preventDefault();
+            const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+            const clientY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+            let left = clientX - offsetX, top = clientY - offsetY;
+            left = Math.max(10, Math.min(left, window.innerWidth - dragBtn.offsetWidth - 10));
+            top = Math.max(10, Math.min(top, window.innerHeight - dragBtn.offsetHeight - 10));
+            dragBtn.style.left = left + "px";
+            dragBtn.style.top = top + "px";
+            dragBtn.style.right = "auto";
+            dragBtn.style.bottom = "auto";
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener("mousemove", drag);
+            document.removeEventListener("touchmove", drag);
+        }
+
+        function goToHome(e) {
+            if (!hasMoved) location.href = 'trangchu.html';
+        }
+
+        dragBtn.addEventListener("mousedown", startDrag);
+        dragBtn.addEventListener("touchstart", startDrag, { passive: true });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình Kỷ Niệm - Luxury Bride</title>
+    
+    <!-- Fonts & Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="styles/default4.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .luxury-header {
+            position: relative !important;
+            height: 75vh !important; /* Đẩy chiều cao khung video lên 75% cho đẹp */
+            width: 100% !important;
+            overflow: hidden !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin-top: 0 !important; /* Ép bỏ khoảng trắng bị lệch dòng */
+            padding-top: 60px !important; /* Nhường chỗ cho menu kính mờ */
+            background-color: #1a1111 !important; 
+        }
+
+        .video-background-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .header-video {
+            position: absolute !important;
+            top: 50% !important; left: 50% !important;
+            width: 100% !important; height: 100% !important;
+            transform: translate(-50%, -50%) !important;
+            object-fit: cover !important; /* Video tự tràn viền không bị móp tẹt hình */
+        }
+
+        .header-overlay {
+            position: absolute !important;
+            top: 0 !important; left: 0 !important;
+            width: 100% !important; height: 100% !important;
+            background: linear-gradient(to bottom, rgba(45,35,35,0.4), rgba(45,35,35,0.7)) !important;
+            z-index: 2 !important;
+        }
+
+        .banner {
+            position: relative !important;
+            z-index: 3 !important;
+            text-align: center; /* Căn giữa nội dung chữ trên video */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        Chào mừng nàng đến với không gian của Luxury Bride – Nơi chứng kiến khoảnh khắc lộng lẫy nhất
+    </div>
+ 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- ĐÃ CHÈN LOGO VÀO ĐÂY: Thay chữ bằng cụm ảnh logo + chữ sang xịn mịn -->
+            <a href="trangchu.html" class="nav-logo">
+                <img src="image/Gemini_Generated_Image_iekbooiekbooiekb.png" alt="Luxury Bride Logo" class="logo-img" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                <span>LuxuryBrand</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href='trangchu.html'>Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="bosutap.html" class="active">Bộ sưu tập</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section với Video Background chuẩn -->
+    <header class="luxury-header">
+        <div class="video-background-container">
+            <video class="header-video" autoplay loop muted playsinline>
+                <source src="image/SaveTik.io_7647516182429551890_hd.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ hiển thị video này.
+            </video>
+        </div>
+        
+        <div class="header-overlay"></div>
+        
+        <div class="banner">
+            <h1>Câu Chuyện Thương Hiệu</h1>
+            <div class="divider-line"></div>
+            <p class="tagline">Kiến tạo giấc mơ hoa mỹ của mọi cô dâu</p>
+            <p class="sub-title">Hơn 10 năm đồng hành cùng hàng ngàn cặp đôi, mang đến những kiệt tác váy cưới hoàn mỹ nhất</p>
+        </div>
+    </header>
+
+    <!-- Giới thiệu Section -->
+    <section class="gioithieu">
+        <div class="title-block">
+            <span class="subtitle">Triết lý thiết kế</span>
+            <h2>Tinh Hoa Trong Từng Đường Kim Mũi Chỉ</h2>
+        </div>
+        <p class="intro-lead">
+            Tại Luxury Bride, chúng tôi tin rằng mỗi cô dâu đều là một nàng thơ duy nhất. Không chạy theo những xu hướng công nghiệp đại trà, chúng tôi gửi gắm cả tâm huyết và đam mê vào hành trình may đo cá nhân hóa, tôn vinh nét đẹp độc bản của nàng trong ngày trọng đại.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h3>Nghệ Thuật Đính Kết</h3>
+                <p>Mỗi tác phẩm đều được dệt nên từ chất liệu ren Pháp, lụa Ý thượng hạng cùng hàng ngàn viên pha lê Swarovski đính thủ công vô cùng tỉ mỉ.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🤍</span>
+                <h3>Thấu Hiểu Nàng Thơ</h3>
+                <p>Đội ngũ tư vấn và stylist luôn lắng nghe câu chuyện tình yêu của hai bạn để định hình nên phong cách váy cưới phù hợp nhất với khí chất của nàng.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🕊️</span>
+                <h3>Kiến Tạo Kỷ Niệm</h3>
+                <p>Hơn cả một trang phục, chúng tôi mang đến những trải nghiệm phục vụ hoàng gia đầy cảm xúc, lưu giữ trọn vẹn từng khoảnh khắc thiêng liêng.</p>
+            </div>
+        </div>
+
+        <a href="dichvu.html" class="btn-explore">Khám phá dịch vụ</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Bản quyền thuộc về chúng tôi. Thiết kế tối giản mang đẳng cấp hoàng gia.</p>
+    </footer>
+
+</body>
+</html>

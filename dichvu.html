@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc Quyền Dịch Vụ VIP - Luxury Bride</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- NỀN TẢNG & BIẾN CỐ ĐỊNH LUXURY BRIDE --- */
+        :root {
+            --color-pink-gold: #ff9aa2;
+            --color-pink-light: #ffb7b2;
+            --color-dark: #2d2323;
+            --color-light: #fffcfc;
+            --color-text: #614e4e;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* --- TOP BAR LỜI CHÀO --- */
+        .top-bar {
+            background-color: var(--color-dark);
+            color: #fff0f1;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255, 154, 162, 0.1);
+        }
+
+        /* --- THANH MENU KÍNH MỜ --- */
+        .navbar {
+            position: fixed;
+            top: 36px; left: 0; width: 100%;
+            z-index: 1000;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.88); 
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px rgba(255, 154, 162, 0.06);
+            border-bottom: 1px solid rgba(255, 183, 178, 0.25);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--color-pink-gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            color: #614e4e;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-menu a:hover, 
+        .nav-menu a.active {
+            color: var(--color-pink-gold) !important;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--color-pink-gold);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* --- HEADER BANNER VIDEO HOÀNG GIA --- */
+        .luxury-header {
+            position: relative;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            margin-top: 36px;
+            background-color: #000; /* Nền đen để tránh giật hình khi tải video */
+        }
+
+        /* Định dạng cho video nền của Banner */
+        .header-video-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transform: scale(1.02);
+            transition: transform 10s ease;
+        }
+
+        .luxury-header:hover .header-video-bg {
+            transform: scale(1.06);
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(45,35,35,0.4), rgba(45,35,35,0.75));
+            z-index: 2;
+        }
+
+        .banner {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .banner h1 {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+        }
+
+        .divider-line {
+            width: 80px;
+            height: 1px;
+            background-color: var(--color-pink-gold);
+            margin: 20px auto;
+        }
+
+        .tagline {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 22px;
+            color: var(--color-pink-light);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+        }
+
+        /* --- KHU VỰC DỊCH VỤ PREMIUM --- */
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 120px;
+        }
+
+        .title-block {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .title-block .subtitle {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-pink-gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .title-block h2 {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            color: #4a3434;
+            font-weight: 400;
+        }
+
+        .booking-divider {
+            color: #ffb7b2; 
+            font-size: 10px; 
+            margin-top: 8px; 
+            letter-spacing: 4px;
+        }
+
+        /* DANH SÁCH BỐ CỤC KHÔNG ĐỐI XỨNG MƯỢT MÀ */
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .service-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Khung chứa video nghệ thuật */
+        .service-img {
+            flex: 1.2;
+            height: 460px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(255, 154, 162, 0.08);
+            background-color: #000;
+        }
+
+        .service-img::before {
+            content: '';
+            position: absolute;
+            top: 15px; left: 15px; right: 15px; bottom: 15px;
+            border: 1px solid rgba(255, 183, 178, 0.3);
+            z-index: 2;
+            pointer-events: none;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-img::before {
+            top: 22px; left: 22px; right: 22px; bottom: 22px;
+            border-color: var(--color-pink-gold);
+        }
+
+        /* Tối ưu hóa hiển thị mượt mà cho video */
+        .service-img video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            display: block;
+        }
+
+        .service-item:hover .service-img video {
+            transform: scale(1.05);
+        }
+
+        /* Khối thông tin đẳng cấp cô dâu VIP */
+        .service-info {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+
+        .service-number {
+            font-family: var(--font-serif);
+            font-size: 50px;
+            color: #f7ebeb;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-number {
+            color: var(--color-pink-gold);
+            transform: translateX(5px);
+        }
+
+        .service-info h3 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            color: #4a3434;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .service-info p {
+            color: var(--color-text);
+            font-size: 14.5px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* Nút Khám Phá Đặc Quyền Mới */
+        .btn-luxury {
+            position: relative;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--color-dark);
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ffd5d8;
+        }
+
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; width: 0; height: 1.5px;
+            background-color: var(--color-pink-gold);
+            transition: var(--transition);
+        }
+
+        .service-item:hover .btn-luxury {
+            color: var(--color-pink-gold);
+            padding-left: 8px;
+        }
+
+        .service-item:hover .btn-luxury::before {
+            width: 100%;
+        }
+
+        /* --- FOOTER ĐỒNG BỘ --- */
+        footer {
+            background-color: var(--color-dark);
+            color: #bfa3a5;
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 2px solid var(--color-pink-gold);
+        }
+
+        .footer-brand {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            color: #fff0f1;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        footer p {
+            font-size: 13.5px;
+            font-weight: 300;
+        }
+
+        /* --- ĐÁP ỨNG THIẾT BỊ DI ĐỘNG --- */
+        @media (max-width: 992px) {
+            .navbar { position: absolute; top: 0; background: rgba(255, 255, 255, 0.98); padding: 15px 0; }
+            .nav-container { flex-direction: column; gap: 8px; }
+            .nav-menu { gap: 20px; }
+            .luxury-header { height: 50vh; margin-top: 100px; }
+            .banner h1 { font-size: 32px; }
+            .services-section { padding: 60px 20px; }
+            .title-block { margin-bottom: 50px; }
+            .title-block h2 { font-size: 28px; }
+            .service-item, .service-item.reverse { flex-direction: column; gap: 30px; }
+            .service-img { width: 100%; height: 320px; }
+            .services-list { gap: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        Tuyệt tác váy cưới hoàng gia – Khơi nguồn trải nghiệm xa xỉ độc quyền
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="trangchu.html" class="nav-logo">Luxury Bride</a>
+            <ul class="nav-menu">
+                <li><a href="trangchu.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="dichvu.html" class="active">Dịch vụ</a></li>
+                <li><a href="sanpham.html">Sản phẩm</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER ĐÃ ĐƯỢC CHÈN VIDEO NỀN ĐÚNG VỊ TRÍ -->
+    <header class="luxury-header">
+        <video class="header-video-bg" autoplay loop muted playsinline>
+            <source src="image/snaptik.vn_7632581768943570196.mp4" type="video/mp4">
+        </video>
+        <div class="header-overlay"></div>
+        <div class="banner">
+            <h1>Đặc Quyền Của Nàng</h1>
+            <div class="divider-line"></div>
+            <p class="tagline">Trải nghiệm thử váy VIP & May đo cá nhân</p>
+            <p class="sub-title">Nơi những giấc mơ lộng lẫy nhất của nàng thơ được hiện thực hóa bằng nghệ thuật phục vụ đỉnh cao</p>
+        </div>
+    </header>
+
+    <section class="services-section">
+        <div class="title-block">
+            <span class="subtitle">Dành riêng cho ngày trọng đại</span>
+            <h2>Dịch Vụ Tinh Hoa Khác Biệt</h2>
+            <div class="booking-divider">✦  ✦  ✦</div>
+        </div>
+
+        <div class="services-list">
+            <!-- DỊCH VỤ 1 -->
+            <div class="service-item">
+                <div class="service-img">
+                    <video autoplay loop muted playsinline>
+                        <source src="image/snaptik.vn_7555965699168963871.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                </div>
+                <div class="service-info">
+                    <span class="service-number">01</span>
+                    <h3>Thử Váy Biệt Lập (Private Fitting)</h3>
+                    <p>Luxury Bride đem đến không gian thử đồ riêng tư khép kín tiêu chuẩn 5 sao dành riêng cho nàng và người thân. Tại đây, mỗi khoảnh khắc khoác lên mình chiếc váy trong mơ đều được nâng niu trọn vẹn trong bầu không khí thư thái kết hợp trà hoa sấy lạnh thượng hạng.</p>
+                    <a href="lienhe.html" class="btn-luxury">Đặt lịch thử ngay</a>
+                </div>
+            </div>
+
+            <!-- DỊCH VỤ 2 -->
+            <div class="service-item reverse">
+                <div class="service-img">
+                    <video autoplay loop muted playsinline>
+                        <source src="image/snaptik.vn_7574039925100743954.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                </div>
+                <div class="service-info">
+                    <span class="service-number">02</span>
+                    <h3>Stylist Định Hình Phong Cách</h3>
+                    <p>Không chỉ là chọn váy, đội ngũ chuyên gia tư vấn thời trang cưới của chúng tôi sẽ đồng hành 1-1 cùng nàng thơ. Dựa vào vóc dáng, chủ đề tiệc cưới và mong muốn cá nhân, Stylist sẽ tư vấn giải pháp kết hợp phụ kiện, layout makeup hoàn hảo nhất.</p>
+                    <a href="lienhe.html" class="btn-luxury">Kết nối chuyên gia</a>
+                </div>
+            </div>
+
+            <!-- DỊCH VỤ 3 -->
+            <div class="service-item">
+                <div class="service-img">
+                    <video autoplay loop muted playsinline>
+                        <source src="image/snaptik.vn_7580337282352237842.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                </div>
+                <div class="service-info">
+                    <span class="service-number">03</span>
+                    <h3>Chế Tác Haute Couture</h3>
+                    <p>Sở hữu chiếc váy độc bản mang số đo của riêng mình. Từng dải ren Pháp tinh xảo, từng hạt pha lê Swarovski lấp lánh đều được các nghệ nhân lành nghề đính kết hoàn toàn thủ công tỉ mỉ hàng trăm giờ liền, tạo nên tác phẩm nghệ thuật trường tồn.</p>
+                    <a href="lienhe.html" class="btn-luxury">Thiết kế độc bản</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Bản quyền thuộc về chúng tôi. Thiết kế tối giản mang đẳng cấp hoàng gia.</p>
+    </footer>
+
+</body>
+</html>

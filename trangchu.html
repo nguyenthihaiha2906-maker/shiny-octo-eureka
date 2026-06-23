@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+<link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+
+<script src="scrite/taitrang5.js" type="text/javascript"></script>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Sưu Tập Premium - Luxury Bride</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="nav-container">
+            <!-- ĐÃ CHÈN LOGO VÀO ĐÂY: Thay chữ bằng cụm ảnh logo + chữ sang xịn mịn -->
+            <a href="trangchu.html" class="nav-logo">
+                <img src="image/Gemini_Generated_Image_iekbooiekbooiekb.png" alt="Luxury Bride Logo" class="logo-img" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                <span>LuxuryBrand</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href='trangchu.html'>Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="bosutap.html" class="active">Bộ sưu tập</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="video-hero-container">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="image/snaptik.vn_7647505591673343250.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ xem video này.
+        </video>
+        <div class="video-overlay">
+            <div class="video-content">
+                <span class="video-tagline">The Haute Couture 2026</span>
+                <h1 class="video-title">Chạm Vào Giấc Mơ</h1>
+            </div>
+        </div>
+    </div>
+
+    <header class="collection-header">
+        <span class="collection-subtitle">The 2026 Haute Couture</span>
+        <h2 class="collection-title">Luxury Collection</h2>
+        <div class="collection-divider">✦  ✦  ✦</div>
+    </header>
+
+    <div class="search-section-container" style="max-width: 600px; margin: 0 auto 30px; padding: 0 20px; display: flex; gap: 10px;">
+        <input type="text" id="search-wedding-input" placeholder="Tìm kiếm chiếc váy trong mơ của bạn (ví dụ: Satin, Lace, Công chúa...)" style="width: 100%; padding: 12px 20px; border: 1px solid #eededc; border-radius: 30px; outline: none; font-size: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+        <button id="btn-search-trigger" style="background: #ff9aa2; color: white; border: none; padding: 0 25px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s;">Tìm kiếm</button>
+    </div>
+
+    <!-- CHỖ SỬA 1: Thêm style="display: none;" vào bộ lọc và lưới sản phẩm để ẩn đi khi mới vào trang -->
+    <div class="collection-filter" id="premium-filter-tabs" style="display: none;">
+        <button class="filter-tab active" data-type="all">Tất Cả Váy Tìm Thấy</button>
+        <button class="filter-tab" data-type="cong-chua">Dáng Công Chúa</button>
+        <button class="filter-tab" data-type="duoi-ca">Dáng Đuôi Cá</button>
+        <button class="filter-tab" data-type="minimalist">Minimalist</button>
+    </div>
+
+    <main class="products-grid-premium" id="premium-products-holder" style="display: none;">
+        
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper"> 
+                <span class="luxury-tag">Limited</span>
+                <img src="image/2a9ccee4ad9227e139180ed3a18d23a5.jpg" alt="Váy Công Chúa Silk Tulle"> 
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Silk Tulle</h3>
+                <p class="price-tag">15.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Best Seller</span>
+                <img src="image/54a3bb404f262476ec4366294cd08570.jpg" alt="Váy Đuôi Cá Premium Satin">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Premium Satin</h3>
+                <p class="price-tag">19.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">New Season</span>
+                <img src="image/993f8fd9af822b2b621de5402b4a8a8f.jpg" alt="Váy Cưới Vintage French Lace">
+            </div>
+            <div class="card-details">
+                <h3>Váy Cưới Vintage French Lace</h3>
+                <p class="price-tag">22.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="minimalist">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Minimalist</span>
+                <img src="image/e8d4fb8959127be38f431eae0a29d042.jpg" alt="Váy Minimalist Trơn Thanh Lịch">
+            </div>
+            <div class="card-details">
+                <h3>Váy Minimalist Trơn Trắng</h3>
+                <p class="price-tag">14.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Luxury</span>
+                <img src="image/Trang Phục Đám Cưới.jfif" alt="Váy Hoàng Gia Royal Princess">
+            </div>
+            <div class="card-details">
+                <h3>Váy Hoàng Gia Royal Princess</h3>
+                <p class="price-tag">35.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Hot</span>
+                <img src="image/6bbc26129280e254a7f8fd083cddbd79.jpg" alt="Váy Đuôi Cá Điêu Khắc Mermaid Elegance">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Mermaid Elegance</h3>
+                <p class="price-tag">28.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="minimalist">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Classic</span>
+                <img src="image/ad8f9942eb7fd78a4a4172bf852aec63.jpg" alt="Váy Dạ Hội Minimalist Cổ Điển">
+            </div>
+            <div class="card-details">
+                <h3>Váy Dạ Hội Minimalist Lụa Pháp</h3>
+                <p class="price-tag">18.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Haute Couture</span>
+                <img src="image/b13019320cb8586058aca950653006ed.jpg" alt="Váy Đuôi Cá Đính Đá Cao Cấp">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Crystal Glow</h3>
+                <p class="price-tag">42.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Sweet</span>
+                <img src="image/e9e9f6b908ea4ca2c519615114ffa78a.jpg" alt="Váy Công Chúa Aurora Pink">
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Aurora Pink</h3>
+                <p class="price-tag">26.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Glitz</span>
+                <img src="image/54a3bb404f262476ec4366294cd08570.jpg" alt="Váy Đuôi Cá Kim Sa Lấp Lánh">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Kim Sa Sparkling</h3>
+                <p class="price-tag">31.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="minimalist">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Pure</span>
+                <img src="image/e8d4fb8959127be38f431eae0a29d042.jpg" alt="Váy Trễ Vai Minimalist Silk">
+            </div>
+            <div class="card-details">
+                <h3>Váy Trễ Vai Minimalist Silk</h3>
+                <p class="price-tag">16.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Modern</span>
+                <img src="image/993f8fd9af822b2b621de5402b4a8a8f.jpg" alt="Váy Công Chúa Thêu Hoa 3D">
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Thêu Hoa 3D</h3>
+                <p class="price-tag">29.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Elegance</span>
+                <img src="image/6bbc26129280e254a7f8fd083cddbd79.jpg" alt="Váy Đuôi Cá Cổ Yếm Satin">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Cổ Yếm Satin</h3>
+                <p class="price-tag">21.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Couture</span>
+                <img src="image/Trang Phục Đám Cưới.jfif" alt="Váy Công Chúa Cinderella Dream">
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Cinderella Dream</h3>
+                <p class="price-tag">38.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="minimalist">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Chic</span>
+                <img src="image/ad8f9942eb7fd78a4a4172bf852aec63.jpg" alt="Váy Minimalist Suông Tây Âu">
+            </div>
+            <div class="card-details">
+                <h3>Váy Minimalist Suông Tây Âu</h3>
+                <p class="price-tag">13.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Exclusive</span>
+                <img src="image/b13019320cb8586058aca950653006ed.jpg" alt="Váy Đuôi Cá Ren Kim Ngân">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Ren Kim Ngân</h3>
+                <p class="price-tag">45.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Glow</span>
+                <img src="image/2a9ccee4ad9227e139180ed3a18d23a5.jpg" alt="Váy Công Chúa Kim Sa Corset">
+            </div>
+            <div class="card-details">
+                <h3>Váy Công Chúa Kim Sa Corset</h3>
+                <p class="price-tag">27.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="duoi-ca">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Queen</span>
+                <img src="image/54a3bb404f262476ec4366294cd08570.jpg" alt="Váy Đuôi Cá Tà Dài Hoàng Gia">
+            </div>
+            <div class="card-details">
+                <h3>Váy Đuôi Cá Tà Dài Hoàng Gia</h3>
+                <p class="price-tag">33.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="minimalist">
+            <div class="img-wrapper">
+                <span class="luxury-tag">Delicate</span>
+                <img src="image/e8d4fb8959127be38f431eae0a29d042.jpg" alt="Váy Cổ V Minimalist Satin">
+            </div>
+            <div class="card-details">
+                <h3>Váy Cổ V Minimalist Satin</h3>
+                <p class="price-tag">15.500.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-premium" data-category="cong-chua">
+            <div class="img-wrapper">
+                <span class="luxury-tag">VVIP</span>
+                <img src="image/993f8fd9af822b2b621de5402b4a8a8f.jpg" alt="Váy Khảm Kim Cương Khổng Tước">
+            </div>
+            <div class="card-details">
+                <h3>Váy Khảm Kim Cương Khổng Tước</h3>
+                <p class="price-tag">88.000.000 ₫</p>
+                <div class="cta-wrapper">
+                    <button class="btn-luxury-init" onclick="showActions(this)">Chạm Để Sở Hữu</button>
+                    <div class="action-luxury-group">
+                        <button class="btn-luxury-confirm" onclick="location.href='dat.html'">Đặt Lịch Hẹn</button>
+                        <button class="btn-luxury-cancel" onclick="hideActions(this)">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Nguyễn Thạnh An | Premium Bridal Experience</p>
+    </footer>
+
+    <script>
+        function showActions(button) {
+            button.style.opacity = '0';
+            setTimeout(() => {
+                button.style.display = 'none';
+                const actionGroup = button.nextElementSibling;
+                actionGroup.style.display = 'flex';
+                setTimeout(() => actionGroup.style.opacity = '1', 50);
+            }, 200);
+        }
+
+        function hideActions(button) {
+            const actionGroup = button.parentElement;
+            actionGroup.style.opacity = '0';
+            setTimeout(() => {
+                actionGroup.style.display = 'none';
+                const initButton = actionGroup.previousElementSibling;
+                initButton.style.display = 'block';
+                setTimeout(() => initButton.style.opacity = '1', 50);
+            }, 200);
+        }
+
+        // --- CHỖ SỬA 2: NÂNG CẤP HỆ THỐNG LỌC VÀ HIỂN THỊ TRỰC QUAN ---
+        $(document).ready(function() {
+            let activeCategory = 'all';
+
+            function locBoSuuTap() {
+                let textSearch = $('#search-wedding-input').val().toLowerCase().trim();
+
+                // 1. NẾU Ô TÌM KIẾM TRỐNG: Ẩn thanh tab lọc và toàn bộ váy đi
+                if (textSearch === "") {
+                    $('#premium-filter-tabs').fadeOut(200);
+                    $('#premium-products-holder').fadeOut(200);
+                    return; 
+                }
+
+                // 2. NẾU CÓ CHỮ TRONG Ô TÌM KIẾM: Hiện thanh bộ lọc và khung chứa váy lên
+                $('#premium-filter-tabs').fadeIn(200);
+                $('#premium-products-holder').fadeIn(300);
+
+                // 3. Tiến hành duyệt tìm kiếm các card sản phẩm
+                $('.card-premium').each(function() {
+                    let cardCat = $(this).data('category');
+                    let cardTitle = $(this).find('h3').text().toLowerCase();
+                    
+                    let matchesCategory = (activeCategory === 'all' || cardCat === activeCategory);
+                    let matchesSearch = (cardTitle.indexOf(textSearch) > -1);
+
+                    if (matchesCategory && matchesSearch) {
+                        $(this).fadeIn(300);
+                    } else {
+                        $(this).fadeOut(200);
+                    }
+                });
+            }
+
+            $('.filter-tab').click(function() {
+                $('.filter-tab').removeClass('active');
+                $(this).addClass('active');
+                activeCategory = $(this).data('type');
+                locBoSuuTap();
+            });
+
+            // Tìm kiếm ngay khi gõ phím
+            $('#search-wedding-input').on('keyup', function() {
+                locBoSuuTap();
+            });
+
+            // Tìm kiếm khi nhấn nút "Tìm kiếm"
+            $('#btn-search-trigger').click(function() {
+                locBoSuuTap();
+            });
+        });
+    </script>
+    
+    <script src="script/taitrang5.js" type="text/javascript"></script>
+</body>
+</html>

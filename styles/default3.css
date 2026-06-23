@@ -1,0 +1,209 @@
+/* ==========================================================================
+   --- BỔ SUNG ĐỊNH DẠNG CHO TRANG ĐĂNG KÝ / ĐĂNG NHẬP (TONE HỒNG LUXURY) ---
+   ========================================================================== */
+
+/* Nền trang đăng ký lãng mạn - Hiệu ứng chuyển màu hồng ngọc trai */
+.auth-body {
+    background: linear-gradient(135deg, #ffffff 0%, #fff2f4 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 500px;
+    perspective: 1000px;
+}
+
+/* Hộp Form Kính Mờ Đẳng Cấp */
+.form-box {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(209, 122, 140, 0.2); /* Viền hồng nhẹ */
+    box-shadow: 0 20px 50px rgba(209, 122, 140, 0.08); /* Đổ bóng có ánh hồng nhẹ */
+    text-align: center;
+}
+
+/* --- 1. PHẦN LOGO THƯƠNG HIỆU (LUÔN HIỂN THỊ) --- */
+.form-box .logo {
+    margin-bottom: 35px;
+    display: block; 
+    width: 100%;
+}
+
+.form-box .logo h1 {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 38px;
+    color: #d17a8c; /* Màu hồng Luxury chủ đạo */
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400; 
+    line-height: 1.2;
+    margin: 0;
+}
+
+.form-box .logo .divider-line {
+    width: 50px;
+    height: 1.5px; 
+    background: #f4a2b1; /* Đường gạch màu hồng cánh hoa */
+    margin: 12px auto 12px;
+}
+
+.form-box .logo p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a69294; /* Nâu xám tro ngả hồng */
+    margin: 0;
+}
+
+/* Tiêu đề trang */
+.form-box h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 22px;
+    color: #4a3b3c; /* Nâu đất ấm mềm mại thay cho màu đen */
+    margin-bottom: 35px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* --- 2. PHẦN Ô NHẬP LIỆU VÀ CHỮ BAY (FLOATING LABEL) --- */
+.form-box .input-group {
+    position: relative;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #ebdcd9; /* Viền ô nhập xám hồng nhẹ */
+    border-radius: 12px;
+    outline: none;
+    font-size: 14.5px;
+    background: #fffdfd;
+    color: #4a3b3c;
+    transition: all 0.3s ease;
+}
+
+.form-box .input-group label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a69294;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng khi bấm vào ô nhập liệu hoặc ô đã có chữ */
+.form-box input:focus {
+    border-color: #d17a8c; /* Đổi viền sang Hồng Luxury khi focus */
+    background: white;
+    box-shadow: 0 4px 12px rgba(209, 122, 140, 0.1);
+}
+
+.form-box input:focus ~ label,
+.form-box input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 11.5px;
+    color: #d17a8c; /* Nhãn chữ chuyển sang hồng khi bay lên */
+    background: white;
+    padding: 0 6px;
+    transform: translateY(-50%) translateX(-4px);
+}
+
+/* Thông báo lỗi dưới mỗi ô nhập */
+.form-box .error-msg {
+    color: #e65f73; /* Hồng đỏ báo lỗi sắc nét */
+    font-size: 11.5px;
+    display: block;
+    margin-top: 4px;
+    padding-left: 6px;
+}
+
+/* --- 3. PHẦN NÚT BẤM TẠO TÀI KHOẢN (ĐÃ KHÔI PHỤC) --- */
+.btn-auth {
+    width: 100%;
+    background: #4a3b3c; /* Nâu đất đậm quý phái */
+    color: #fffdfd;
+    border: 1px solid #4a3b3c;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-auth:hover {
+    background: #d17a8c; /* Đổi sang màu Hồng Luxury khi hover */
+    border-color: #d17a8c;
+    color: white;
+    box-shadow: 0 6px 20px rgba(209, 122, 140, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Nhãn thông báo chung bên dưới */
+#thongbao {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- 4. PHẦN LIÊN KẾT ĐĂNG NHẬP (ĐÃ KHÔI PHỤC) --- */
+.switch-page {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ebdcd9;
+    font-size: 13.5px;
+    color: #8c787a;
+}
+
+.switch-page a {
+    color: #d17a8c; /* Đường dẫn màu hồng */
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+    transition: color 0.2s ease;
+}
+
+.switch-page a:hover {
+    color: #4a3b3c;
+}
+
+/* --- 5. NÚT QUAY LẠI LƠ LỬNG --- */
+.floating-back-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 46px;
+    height: 46px;
+    background: white;
+    border: 1px solid #ebdcd9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(209, 122, 140, 0.08);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.floating-back-btn:hover {
+    background: #d17a8c;
+    border-color: #d17a8c;
+}
+
+.floating-back-btn span {
+    font-size:

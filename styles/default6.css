@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   ROMANTIC PINK BOUTIQUE - LUXURY BRIDE SYSTEM
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffcfc; 
+    color: #4a3b3b; 
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- NAVBAR MENU --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 999;
+    padding: 14px 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(255, 154, 162, 0.08);
+    border-bottom: 1px solid rgba(255, 183, 178, 0.3);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #ff7b89;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #614e4e;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: #ff9aa2 !important;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 2px;
+    background: #ff9aa2;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+    color: white !important;
+    padding: 8px 18px !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(255, 154, 162, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(255, 154, 162, 0.35);
+}
+
+/* --- BANNER HERO --- */
+header#top-page {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 60px;
+    background-color: #fff5f6;
+}
+
+.header-bg {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: url('../image/e9e9f6b908ea4ca2c519615114ffa78a.jpg') no-repeat center center/cover;
+    filter: brightness(0.95);
+}
+
+.header-overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(74, 52, 52, 0.25);
+}
+
+.header-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.header-content .sub-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ffd5d8;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.divider-line {
+    width: 60px; height: 1px;
+    background: #ff9aa2;
+    margin: 15px auto;
+}
+
+.header-content p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    color: #fff0f1;
+}
+
+.header-scroll-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.header-scroll-btn:hover {
+    background: white;
+    color: #ff7b89;
+    border-color: white;
+}
+
+/* --- TITLE SECTION --- */
+.title {
+    text-align: center;
+    margin: 70px 0 40px;
+}
+
+.title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #4a3434;
+    font-weight: 400;
+}
+
+.collection-divider {
+    color: #ffb7b2;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 6px;
+}
+
+/* --- PRODUCT CARDS --- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 8px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 183, 178, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 154, 162, 0.03);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255, 154, 162, 0.12);
+    border-color: #ff9aa2;
+}
+
+.img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #fff5f6;
+}
+
+.img-container img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .img-container img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #4a3434;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.price-tag {
+    font-size: 15px;
+    color: #ff7b89;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.card-content button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 154, 162, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-content button:hover {
+    background: linear-gradient(135deg, #ffb7b2, #ff9aa2);
+    box-shadow: 0 6px 18px rgba(255, 154, 162, 0.35);
+}
+
+/* --- CONSULTATION SECTION --- */
+.consultation {
+    background: #fff5f6;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 80px 0 40px;
+    border-top: 1px solid rgba(255, 154, 162, 0.2);
+    border-bottom: 1px solid rgba(255, 154, 162, 0.2);
+}
+
+.consultation h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #4a3434;
+    margin-bottom: 10px;
+}
+
+.consultation p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    font-size: 14px;
+    color: #6e5a5a;
+}
+
+.consultation-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: auto;
+    gap: 10px;
+}
+
+.consultation-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #ffd5d8;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.consultation-form input:focus {
+    border-color: #ff9aa2;
+}
+
+.consultation-form button {
+    padding: 12px 28px;
+    background: #2d2323;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.consultation-form button:hover {
+    background: #4a3434;
+}
+
+/* --- BACK TO HOME --- */
+.back-to-home {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.back-to-home a {
+    text-decoration: none;
+    color: #a68f91;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-to-home a:hover {
+    color: #ff7b89;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #2d2323;
+    color: #bfa3a5;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    border-top: 2px solid #ff9aa2;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    header#top-page { height: 50vh; }
+    .header-content h1 { font-size: 34px; }
+    .title h2 { font-size: 28px; }
+    .img-container { height: 350px; }
+    .consultation-form { flex-direction: column; }
+}

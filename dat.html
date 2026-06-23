@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Lịch Hẹn Thử Váy VIP - Luxury Bride</title>
+    
+    <!-- Nhúng Font chữ hoàng gia -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        @charset "utf-8";
+
+        /* Bảng màu định danh thương hiệu VIP */
+        :root {
+            --primary-pink: #d17a8c;    /* Hồng Luxury chủ đạo */
+            --light-pink: #fff2f4;      /* Hồng ngọc trai nền */
+            --rose-gold: #e2a2ae;       /* Vàng hồng cao cấp */
+            --champagne: #f7e7e4;       /* Vàng champagne nhạt */
+            --dark-brown: #4a3b3c;      /* Nâu đất ấm quý phái */
+            --text-gray: #8c787a;       /* Xám tro ngả hồng */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-pink) 100%);
+            color: var(--dark-brown);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* --- THANH MENU THỜI THƯỢNG (STICKY GLASS NAVBAR) --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 999;
+            padding: 12px 0;
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 10px 40px rgba(209, 122, 140, 0.06);
+            border-bottom: 1px solid rgba(209, 122, 140, 0.15);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            color: var(--primary-pink);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .nav-menu a:hover, 
+        .nav-menu a.active {
+            color: var(--primary-pink) !important;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 1.5px;
+            background: var(--primary-pink);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* --- BỐ CỤC KHÔNG GIAN ĐẶT LỊCH --- */
+        .booking-wrapper {
+            max-width: 1200px;
+            margin: 140px auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        /* Hộp Form Kính Mờ Đẳng Cấp */
+        .booking-form-card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(209, 122, 140, 0.15);
+            box-shadow: 0 20px 50px rgba(209, 122, 140, 0.05);
+        }
+
+        .booking-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .booking-heading span {
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--primary-pink);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .booking-heading h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            color: var(--dark-brown);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .booking-divider {
+            color: var(--rose-gold); 
+            font-size: 11px; 
+            margin-top: 10px; 
+            letter-spacing: 6px;
+        }
+
+        .form-row-double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* Nâng cấp phần Floating Label (Nhãn chữ bay) */
+        .form-group-premium {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .form-input-premium {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 14px;
+            border: 1px solid #ebdcd9;
+            outline: none;
+            font-size: 14.5px;
+            color: var(--dark-brown);
+            background: #fffdfd;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Tạo kiểu riêng cho nhãn chữ */
+        .form-group-premium label {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+            font-size: 14px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background: transparent;
+            padding: 0 4px;
+        }
+
+        /* Giữ nhãn luôn ở trên đối với các ô đặc biệt như date, select */
+        .form-group-premium.special-field label,
+        .form-input-premium:focus ~ label,
+        .form-input-premium:not(:placeholder-shown) ~ label {
+            top: 0;
+            font-size: 11.5px;
+            color: var(--primary-pink);
+            background: white;
+            transform: translateY(-50%) translateX(-4px);
+            font-weight: 600;
+        }
+
+        .form-input-premium:focus {
+            border-color: var(--primary-pink);
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(209, 122, 140, 0.12);
+        }
+
+        select.form-input-premium {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%234a3b3c' d='M0 0l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: calc(100% - 20px) center;
+        }
+
+        textarea.form-input-premium {
+            border-radius: 16px;
+            resize: none;
+            height: 120px;
+        }
+
+        /* Nút xác nhận hoàng gia quý phái */
+        .btn-booking-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--dark-brown);
+            color: #fffdfd;
+            border: 1px solid var(--dark-brown);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(74, 59, 60, 0.15);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 5px;
+        }
+
+        .btn-booking-submit:hover {
+            background: var(--primary-pink);
+            border-color: var(--primary-pink);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(209, 122, 140, 0.35);
+        }
+
+        /* --- SIDEBAR --- */
+        .booking-info-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-card-premium {
+            background: var(--dark-brown); 
+            color: #fff0f1;
+            padding: 40px 35px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(74, 59, 60, 0.12);
+            border: 1px solid rgba(247, 231, 228, 0.1);
+        }
+
+        .info-card-premium h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: var(--rose-gold);
+            letter-spacing: 1px;
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+            font-size: 14px;
+            line-height: 1.6;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .info-item:last-child {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .info-item strong {
+            color: #ffffff;
+            display: block;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .map-card-premium {
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(209, 122, 140, 0.15);
+            height: 100%;
+            min-height: 280px;
+            box-shadow: 0 15px 40px rgba(209, 122, 140, 0.04);
+        }
+
+        .map-card-premium iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- MODAL POPUP THÔNG BÁO XỊN SÒ --- */
+        .success-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(74, 59, 60, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; pointer-events: none;
+            transition: all 0.4s ease;
+        }
+        
+        .success-modal.show {
+            opacity: 1; pointer-events: auto;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 45px 40px;
+            border-radius: 24px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(74, 59, 60, 0.2);
+            transform: scale(0.85);
+            border: 1px solid rgba(209, 122, 140, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .success-modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            font-size: 50px;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .modal-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .modal-content p {
+            font-size: 14.5px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .btn-close-modal {
+            padding: 14px 40px;
+            background: var(--dark-brown);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-close-modal:hover {
+            background: var(--primary-pink);
+            box-shadow: 0 5px 15px rgba(209, 122, 140, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark-brown);
+            color: #bfa3a5;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 13.5px;
+            border-top: 3px solid var(--primary-pink);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            color: #fff0f1;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .navbar { background: rgba(255, 255, 255, 0.98); padding: 12px 0; }
+            .nav-container { flex-direction: column; gap: 12px; }
+            .nav-menu { gap: 25px; }
+            .booking-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: 180px;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .booking-form-card { padding: 35px 20px; }
+            .form-row-double { grid-template-columns: 1fr; gap: 0; }
+            .booking-heading h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="trangchu.html" class="nav-logo">
+                <img src="image/Gemini_Generated_Image_iekbooiekbooiekb.png" alt="Luxury Bride Logo" class="logo-img" style="height: 38px; vertical-align: middle; margin-right: 12px;">
+                <h1>Luxury Bride</h1>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href='trangchu.html'>Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="bosutap.html" class="active">Bộ sưu tập</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN BOOTSTRAP GRID -->
+    <main class="booking-wrapper">
+        
+        <!-- FORM PHÍA BÊN TRÁI -->
+        <section class="booking-form-card">
+            <div class="booking-heading">
+                <span>Private Fitting</span>
+                <h2>Đặt Lịch Hẹn Thử Váy VIP</h2>
+                <div class="booking-divider">✦  ✦  ✦</div>
+            </div>
+
+            <form id="luxuryFittingForm" onsubmit="executeBooking(event)">
+                
+                <div class="form-row-double">
+                    <div class="form-group-premium">
+                        <input type="text" id="brideName" class="form-input-premium" placeholder=" " required>
+                        <label for="brideName">Tên của nàng thơ *</label>
+                    </div>
+                    <div class="form-group-premium">
+                        <input type="tel" id="bridePhone" class="form-input-premium" pattern="[0-9]{10,11}" placeholder=" " required>
+                        <label for="bridePhone">Số điện thoại kết nối *</label>
+                    </div>
+                </div>
+
+                <div class="form-row-double">
+                    <!-- Class special-field giúp giữ Label đẹp chuẩn cho ô Date và Select -->
+                    <div class="form-group-premium special-field">
+                        <input type="date" id="appointmentDate" class="form-input-premium" required>
+                        <label for="appointmentDate">Chọn ngày hẹn mong muốn *</label>
+                    </div>
+                    <div class="form-group-premium special-field">
+                        <select id="appointmentTime" class="form-input-premium" required>
+                            <option value="" disabled selected></option>
+                            <option value="09:00">09:00 AM - 11:00 AM</option>
+                            <option value="11:00">11:00 AM - 13:00 PM</option>
+                            <option value="14:00">14:00 PM - 16:00 PM</option>
+                            <option value="16:00">16:00 PM - 18:00 PM</option>
+                            <option value="18:00">18:00 PM - 20:00 PM (Khung giờ Vàng)</option>
+                        </select>
+                        <label for="appointmentTime">Khung giờ thử váy VIP *</label>
+                    </div>
+                </div>
+
+                <div class="form-group-premium special-field">
+                    <select id="dressModel" class="form-input-premium">
+                        <option value="none">Nàng muốn đến xem trực tiếp và nghe tư vấn từ Stylist</option>
+                        <option value="princess">Váy Công Chúa Silk Tulle — 15.000.000 ₫</option>
+                        <option value="mermaid">Váy Đuôi Cá Premium Satin — 19.500.000 ₫</option>
+                        <option value="lace">Váy Cưới Vintage French Lace — 22.000.000 ₫</option>
+                        <option value="swan">Váy Thiên Nga Đắp Ren Pháp — 22.000.000 ₫</option>
+                        <option value="minimalist">Váy Thanh Lịch Minimalist — 18.000.000 ₫</option>
+                        <option value="pearl">Váy Ngọc Trai Vintage Glow — 31.000.000 ₫</option>
+                    </select>
+                    <label for="dressModel">Mẫu thiết kế nàng đang ngắm chọn</label>
+                </div>
+
+                <div class="form-group-premium">
+                    <textarea id="specialRequest" class="form-input-premium" placeholder=" "></textarea>
+                    <label for="specialRequest">Lời nhắn hoặc yêu cầu đặc biệt gửi Boutique</label>
+                </div>
+
+                <button type="submit" class="btn-booking-submit">Xác Nhận Đăng Ký Lịch Thử Váy VIP</button>
+            </form>
+        </section>
+
+        <!-- SIDEBAR THÔNG TIN PHÍA BÊN PHẢI -->
+        <aside class="booking-info-sidebar">
+            
+            <div class="info-card-premium">
+                <h3>Luxury Bride Store</h3>
+                
+                <div class="info-item">
+                    <strong>Địa chỉ Boutique</strong>
+                    Phường Tam Thắng, Thành phố Hồ Chí Minh
+                </div>
+                
+                <div class="info-item">
+                    <strong>Hotline tư vấn VIP</strong>
+                    0909.XXX.XXX (Hỗ trợ 24/7)
+                </div>
+
+                <div class="info-item">
+                    <strong>Thời gian làm việc</strong>
+                    09:00 AM - 21:00 PM (Làm việc cả Thứ 7 & Chủ Nhật)
+                </div>
+            </div>
+
+            <!-- BẢN ĐỒ MAPS -->
+            <div class="map-card-premium">
+                <iframe src="https://maps.google.com/maps?q=Ho%20Chi%20Minh%20City&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </aside>
+    </main>
+
+    <!-- POPUP THÔNG BÁO VIP ĐỘC QUYỀN -->
+    <div class="success-modal" id="bookingSuccessModal">
+        <div class="modal-content">
+            <span class="modal-icon">🌸</span>
+            <h3>Đăng Ký Thành Công!</h3>
+            <p>Thật tuyệt vời! Lịch hẹn thử váy VIP của nàng đã được gửi tới hệ thống. Đội ngũ Stylist riêng của Luxury Bride sẽ gọi điện xác nhận trong vòng 15 phút tới nhé!</p>
+            <button class="btn-close-modal" onclick="closeSuccessModal()">Đóng Cửa Sổ</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Nguyễn Thạnh An | T25TKDH2</p>
+    </footer>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Không cho chọn ngày trong quá khứ
+            const appointmentInput = document.getElementById('appointmentDate');
+            if (appointmentInput) {
+                const todaySetting = new Date().toISOString().split('T')[0];
+                appointmentInput.setAttribute('min', todaySetting);
+            }
+        });
+
+        const modal = document.getElementById('bookingSuccessModal');
+
+        function executeBooking(event) {
+            event.preventDefault();
+            if (modal) {
+                modal.classList.add('show');
+            }
+            const bookingForm = document.getElementById("luxuryFittingForm");
+            if (bookingForm) {
+                bookingForm.reset();
+            }
+        }
+
+        function closeSuccessModal() {
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>
